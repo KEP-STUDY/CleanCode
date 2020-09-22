@@ -32,7 +32,7 @@
 
 위의 과정이 일반적인 테스트 코드를 작성하는 팀에서 발생하는 딜레마이다.
 
-하지만 이러한 테스트 코드가 실패한 이유는 **테스트 코드는 잣같이 짜도 괜찮다**라는 식의 결정 떄문이다.
+하지만 이러한 테스트 코드가 실패한 이유는 **테스트 코드는 대충 짜도 괜찮다**라는 식의 결정 떄문이다.
 
 테스트 코드는 실제 코드 못지 안헥 중요하다.
 
@@ -103,12 +103,12 @@ public void testGetPageHierarchyAsXml() throws Exception {
 ```java
 @Test
 public void turnOnLoTempAlarmAtThreashold() throws Exception {
-  hw.setTemp(WAY_TOO_COLD); 
-  controller.tic(); 
-  assertTrue(hw.heaterState());   
-  assertTrue(hw.blowerState()); 
-  assertFalse(hw.coolerState()); 
-  assertFalse(hw.hiTempAlarm());       
+  hw.setTemp(WAY_TOO_COLD);
+  controller.tic();
+  assertTrue(hw.heaterState());
+  assertTrue(hw.blowerState());
+  assertFalse(hw.coolerState());
+  assertFalse(hw.hiTempAlarm());
   assertTrue(hw.loTempAlarm());
 }
 ```
@@ -123,7 +123,7 @@ tic이 뭔지 매우 궁금한데 신경쓸 필요가 없다고 한다.
 @Test
 public void turnOnLoTempAlarmAtThreshold() throws Exception {
   wayTooCold();
-  assertEquals("HBchL", hw.getState()); 
+  assertEquals("HBchL", hw.getState());
 }
 ```
 
@@ -145,11 +145,11 @@ Fast 빠르게 - 테스트는 빨라야한다. 테스트가 느리면 자주 돌
 
 Independent 독립적으로 - 테스트는 서로 의존해서는 안된다. 한 테스트가 다음 테스트가 실행될 환경을 준비해서는 안된다.
 
-Repetable 반복가능하게 - 테스트는 어떤 환경에서도 반복 가능해야한다. 
+Repetable 반복가능하게 - 테스트는 어떤 환경에서도 반복 가능해야한다.
 
 Self-Validating 자가 검증 하는 - 테스트는 bool 값으로 결과를 내야한다. 반드시 성공 or 실패만이 존재한다.
 
-Timely 적시에 - 테스트는 적시에 작성해야한다. 단위 테스트는 테스트 하려는 실제 코드를 구현하기 직전에 구현한다. 
+Timely 적시에 - 테스트는 적시에 작성해야한다. 단위 테스트는 테스트 하려는 실제 코드를 구현하기 직전에 구현한다.
 
 ## 결론
 
